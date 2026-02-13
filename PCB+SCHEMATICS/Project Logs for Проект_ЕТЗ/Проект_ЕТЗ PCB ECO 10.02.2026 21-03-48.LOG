@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=R6-2
+Removed Pin From Net: NetName=TX_1 Pin=SW1-2
+Removed Member From Class: ClassName=Проект_ЕТЗ Member=R5
+Removed Member From Class: ClassName=Проект_ЕТЗ Member=R6
+Removed Member From Class: ClassName=Проект_ЕТЗ Member=SW1
+Added Pin To Net: NetName=TX_1 Pin=X19-1

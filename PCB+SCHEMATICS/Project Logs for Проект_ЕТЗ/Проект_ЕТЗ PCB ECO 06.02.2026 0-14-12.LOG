@@ -1,0 +1,386 @@
+Removed Member From Class: ClassName=рандом_sheet Member=*1
+Removed Member From Class: ClassName=рандом_sheet Member=*2
+Removed Member From Class: ClassName=рандом_sheet Member=*
+Change Component Footprint: Designator=X2 Old Footprint=PLS-2.54-3 New Footprint=CWF-4
+Change Component Comment : Designator=X5 Old Comment=PLS-2.54-4 New Comment=
+Change Component Comment : Designator=X4 Old Comment=PLS-2.54-4 New Comment=UART
+Change Component Comment : Designator=X2 Old Comment=для датчиков New Comment=DS1069-4M (CWF-4)
+Change Component Designator: OldDesignator=X1 NewDesignator=X11
+Change Component Designator: OldDesignator=X3 NewDesignator=X18
+Change Component Designator: OldDesignator=X4 NewDesignator=X19
+Change Component Designator: OldDesignator=X5 NewDesignator=X13
+Change component parameters: Designator = "X4" ("X19"); Footprint = "PLS-2.54-4"; UniqueID = "\JJNPVFUL" ("\JJNPVFUL")
+Change component parameters (AddParameter): Name = "Contact_1"; Value = "TX"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_2"; Value = "RX"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_3"; Value = "VCC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_4"; Value = "GND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "nam"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "X5" ("X13"); Footprint = "PLS-2.54-4"; UniqueID = "\PCSACION" ("\PCSACION")
+Change component parameters (AddParameter): Name = "Contact_1"; Value = "SDA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_2"; Value = "SCL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_3"; Value = "VCC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_4"; Value = "GND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "X2" ("X2"); Footprint = "PLS-2.54-3"; UniqueID = "\TZQDLVFA" ("\TZQDLVFA")
+Change component parameters (AddParameter): Name = "Contact_1"; Value = "1B"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_2"; Value = "1A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_3"; Value = "2A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact_4"; Value = "2B"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Name"; Value = "DS1069-4M (CWF-4)"; VariantName = "[No Variations]"
+Added Component: Designator=But1(SWITCH)
+Add component (AddParameter): Name = "nam"; Value = "кнопка_S"; VariantName = "[No Variations]"
+Added Component: Designator=C1(SH035M0470B5S-1015)
+Add component (AddParameter): Name = "nam"; Value = "конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nominal"; Value = "100мк"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "voltage"; Value = "35В"; VariantName = "[No Variations]"
+Added Component: Designator=C2(SH035M0470B5S-1015)
+Add component (AddParameter): Name = "nam"; Value = "конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nominal"; Value = "100мк"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "voltage"; Value = "35В"; VariantName = "[No Variations]"
+Added Component: Designator=C3(SH035M0470B5S-1015)
+Add component (AddParameter): Name = "nam"; Value = "конденсатор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nominal"; Value = "100мк"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "voltage"; Value = "35В"; VariantName = "[No Variations]"
+Added Component: Designator=R1(Resistor0805)
+Add component (AddParameter): Name = "nam"; Value = "резистор"; VariantName = "[No Variations]"
+Added Component: Designator=R2(Resistor0805)
+Add component (AddParameter): Name = "nam"; Value = "резистор"; VariantName = "[No Variations]"
+Added Component: Designator=R3(Resistor0805)
+Add component (AddParameter): Name = "nam"; Value = "резистор"; VariantName = "[No Variations]"
+Added Component: Designator=R4(Resistor0805)
+Add component (AddParameter): Name = "nam"; Value = "резистор"; VariantName = "[No Variations]"
+Added Component: Designator=R5(Resistor0805)
+Add component (AddParameter): Name = "nam"; Value = "резистор"; VariantName = "[No Variations]"
+Added Component: Designator=R6(Resistor0805)
+Add component (AddParameter): Name = "nam"; Value = "резистор"; VariantName = "[No Variations]"
+Added Component: Designator=SW1(SWITCH)
+Add component (AddParameter): Name = "nam"; Value = "кнопка_S"; VariantName = "[No Variations]"
+Added Component: Designator=SW2(SWITCH)
+Add component (AddParameter): Name = "nam"; Value = "кнопка_S"; VariantName = "[No Variations]"
+Added Component: Designator=SW3(SWITCH)
+Add component (AddParameter): Name = "nam"; Value = "кнопка_S"; VariantName = "[No Variations]"
+Added Component: Designator=VD1(LED0805)
+Added Component: Designator=VD2(LED0805)
+Added Component: Designator=X1(CWF-4)
+Add component (AddParameter): Name = "Contact_1"; Value = "1B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_3"; Value = "2A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_4"; Value = "2B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "DS1069-4M (CWF-4)"; VariantName = "[No Variations]"
+Added Component: Designator=X3(CWF-4)
+Add component (AddParameter): Name = "Contact_1"; Value = "1B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "1A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_3"; Value = "2A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_4"; Value = "2B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "DS1069-4M (CWF-4)"; VariantName = "[No Variations]"
+Added Component: Designator=X4(AMASS_XT60-M)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/XT60-M/AMASS/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_1"; Value = "+4S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AMASS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "XT60-M"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Package"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/XT60-M/AMASS/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=X5(mini360)
+Added Component: Designator=X6(mini360)
+Added Component: Designator=X7(mini360)
+Added Component: Designator=X8(A4988)
+Added Component: Designator=X9(A4988)
+Added Component: Designator=X10(A4988)
+Added Component: Designator=X12(PLS-2.54-3*6)
+Add component (AddParameter): Name = "Contact_1"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_3"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_4"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_5"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_6"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_7"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_8"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_9"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_10"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_11"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_12"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_13"; Value = "D1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_14"; Value = "D2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_15"; Value = "D3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_16"; Value = "A1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_17"; Value = "A2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_18"; Value = "A3"; VariantName = "[No Variations]"
+Added Component: Designator=X14(PLS-2.54-3)
+Add component (AddParameter): Name = "Contact_1"; Value = "S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_3"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nam"; Value = "для датчиков"; VariantName = "[No Variations]"
+Added Component: Designator=X15(PLS-2.54-3)
+Add component (AddParameter): Name = "Contact_1"; Value = "S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_3"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nam"; Value = "для датчиков"; VariantName = "[No Variations]"
+Added Component: Designator=X16(pls-6)
+Added Component: Designator=X17(PLS-2.54-3)
+Add component (AddParameter): Name = "Contact_1"; Value = "S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "VCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_3"; Value = "GND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nam"; Value = "для датчиков"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=GND Pin=R2-2
+Added Pin To Net: NetName=GND Pin=R3-2
+Added Pin To Net: NetName=GND Pin=R4-2
+Added Pin To Net: NetName=GND Pin=R6-2
+Added Pin To Net: NetName=GND Pin=X4-2
+Added Pin To Net: NetName=GND Pin=X5-2
+Added Pin To Net: NetName=GND Pin=X5-4
+Added Pin To Net: NetName=GND Pin=X6-2
+Added Pin To Net: NetName=GND Pin=X6-4
+Added Pin To Net: NetName=GND Pin=X7-2
+Added Pin To Net: NetName=GND Pin=X7-4
+Added Pin To Net: NetName=GND Pin=X8-9
+Added Pin To Net: NetName=GND Pin=X8-15
+Added Pin To Net: NetName=GND Pin=X9-9
+Added Pin To Net: NetName=GND Pin=X9-15
+Added Pin To Net: NetName=GND Pin=X10-9
+Added Pin To Net: NetName=GND Pin=X10-15
+Added Pin To Net: NetName=GND Pin=X11-74
+Added Pin To Net: NetName=GND Pin=X12-1
+Added Pin To Net: NetName=GND Pin=X12-2
+Added Pin To Net: NetName=GND Pin=X12-3
+Added Pin To Net: NetName=GND Pin=X12-4
+Added Pin To Net: NetName=GND Pin=X12-5
+Added Pin To Net: NetName=GND Pin=X12-6
+Added Pin To Net: NetName=GND Pin=X13-4
+Added Pin To Net: NetName=GND Pin=X14-3
+Added Pin To Net: NetName=GND Pin=X15-3
+Added Pin To Net: NetName=GND Pin=X16-5
+Added Pin To Net: NetName=GND Pin=X17-3
+Added Pin To Net: NetName=GND Pin=X18-3
+Added Pin To Net: NetName=GND Pin=X19-4
+Added Pin To Net: NetName=+3.3В Pin=SW1-1
+Added Pin To Net: NetName=+3.3В Pin=SW2-1
+Added Pin To Net: NetName=+3.3В Pin=SW3-1
+Added Pin To Net: NetName=+3.3В Pin=X7-1
+Added Net: Name=+3.3В
+Added Pin To Net: NetName=+5В Pin=SW1-3
+Added Pin To Net: NetName=+5В Pin=SW2-3
+Added Pin To Net: NetName=+5В Pin=SW3-3
+Added Pin To Net: NetName=+5В Pin=VD2-2
+Added Pin To Net: NetName=+5В Pin=X5-1
+Added Pin To Net: NetName=+5В Pin=X8-5
+Added Pin To Net: NetName=+5В Pin=X8-6
+Added Pin To Net: NetName=+5В Pin=X8-7
+Added Pin To Net: NetName=+5В Pin=X8-10
+Added Pin To Net: NetName=+5В Pin=X9-5
+Added Pin To Net: NetName=+5В Pin=X9-6
+Added Pin To Net: NetName=+5В Pin=X9-7
+Added Pin To Net: NetName=+5В Pin=X9-10
+Added Pin To Net: NetName=+5В Pin=X10-5
+Added Pin To Net: NetName=+5В Pin=X10-6
+Added Pin To Net: NetName=+5В Pin=X10-7
+Added Pin To Net: NetName=+5В Pin=X10-10
+Added Pin To Net: NetName=+5В Pin=X12-7
+Added Pin To Net: NetName=+5В Pin=X12-8
+Added Pin To Net: NetName=+5В Pin=X12-9
+Added Pin To Net: NetName=+5В Pin=X12-10
+Added Pin To Net: NetName=+5В Pin=X12-11
+Added Pin To Net: NetName=+5В Pin=X12-12
+Added Pin To Net: NetName=+5В Pin=X13-3
+Added Pin To Net: NetName=+5В Pin=X14-2
+Added Pin To Net: NetName=+5В Pin=X15-2
+Added Pin To Net: NetName=+5В Pin=X16-1
+Added Net: Name=+5В
+Added Pin To Net: NetName=+5В_MCU Pin=X6-1
+Added Pin To Net: NetName=+5В_MCU Pin=X11-75
+Added Pin To Net: NetName=+5В_MCU Pin=X11-76
+Added Net: Name=+5В_MCU
+Added Pin To Net: NetName=Analog Pin=X11-55
+Added Pin To Net: NetName=Analog Pin=X18-1
+Added Net: Name=Analog
+Added Pin To Net: NetName=BATTERY_VOLTAGE Pin=R1-2
+Added Pin To Net: NetName=BATTERY_VOLTAGE Pin=R2-1
+Added Pin To Net: NetName=BATTERY_VOLTAGE Pin=X11-57
+Added Net: Name=BATTERY_VOLTAGE
+Added Pin To Net: NetName=Digital Pin=X11-14
+Added Pin To Net: NetName=Digital Pin=X17-1
+Added Net: Name=Digital
+Added Pin To Net: NetName=Dir1 Pin=X8-1
+Added Pin To Net: NetName=Dir1 Pin=X11-3
+Added Net: Name=Dir1
+Added Pin To Net: NetName=Dir2 Pin=X9-1
+Added Pin To Net: NetName=Dir2 Pin=X11-4
+Added Net: Name=Dir2
+Added Pin To Net: NetName=Dir3 Pin=X10-1
+Added Pin To Net: NetName=Dir3 Pin=X11-23
+Added Net: Name=Dir3
+Added Pin To Net: NetName=DRV1_1A Pin=X1-2
+Added Pin To Net: NetName=DRV1_1A Pin=X8-12
+Added Net: Name=DRV1_1A
+Added Pin To Net: NetName=DRV1_1B Pin=X1-1
+Added Pin To Net: NetName=DRV1_1B Pin=X8-11
+Added Net: Name=DRV1_1B
+Added Pin To Net: NetName=DRV1_2A Pin=X1-3
+Added Pin To Net: NetName=DRV1_2A Pin=X8-13
+Added Net: Name=DRV1_2A
+Added Pin To Net: NetName=DRV1_2B Pin=X1-4
+Added Pin To Net: NetName=DRV1_2B Pin=X8-14
+Added Net: Name=DRV1_2B
+Added Pin To Net: NetName=DRV2_1A Pin=X2-2
+Added Pin To Net: NetName=DRV2_1A Pin=X9-12
+Added Net: Name=DRV2_1A
+Added Pin To Net: NetName=DRV2_1B Pin=X2-1
+Added Pin To Net: NetName=DRV2_1B Pin=X9-11
+Added Net: Name=DRV2_1B
+Added Pin To Net: NetName=DRV2_2A Pin=X2-3
+Added Pin To Net: NetName=DRV2_2A Pin=X9-13
+Added Net: Name=DRV2_2A
+Added Pin To Net: NetName=DRV2_2B Pin=X2-4
+Added Pin To Net: NetName=DRV2_2B Pin=X9-14
+Added Net: Name=DRV2_2B
+Added Pin To Net: NetName=DRV3_1A Pin=X3-2
+Added Pin To Net: NetName=DRV3_1A Pin=X10-12
+Added Net: Name=DRV3_1A
+Added Pin To Net: NetName=DRV3_1B Pin=X3-1
+Added Pin To Net: NetName=DRV3_1B Pin=X10-11
+Added Net: Name=DRV3_1B
+Added Pin To Net: NetName=DRV3_2A Pin=X3-3
+Added Pin To Net: NetName=DRV3_2A Pin=X10-13
+Added Net: Name=DRV3_2A
+Added Pin To Net: NetName=DRV3_2B Pin=X3-4
+Added Pin To Net: NetName=DRV3_2B Pin=X10-14
+Added Net: Name=DRV3_2B
+Added Pin To Net: NetName=Extra_1 Pin=X11-7
+Added Pin To Net: NetName=Extra_1 Pin=X12-13
+Added Net: Name=Extra_1
+Added Pin To Net: NetName=Extra_2 Pin=X11-15
+Added Pin To Net: NetName=Extra_2 Pin=X12-14
+Added Net: Name=Extra_2
+Added Pin To Net: NetName=Extra_3 Pin=X11-16
+Added Pin To Net: NetName=Extra_3 Pin=X12-15
+Added Net: Name=Extra_3
+Added Pin To Net: NetName=Extra_4 Pin=X11-58
+Added Pin To Net: NetName=Extra_4 Pin=X12-16
+Added Net: Name=Extra_4
+Added Pin To Net: NetName=Extra_5 Pin=X11-59
+Added Pin To Net: NetName=Extra_5 Pin=X12-17
+Added Net: Name=Extra_5
+Added Pin To Net: NetName=Extra_6 Pin=X11-60
+Added Pin To Net: NetName=Extra_6 Pin=X12-18
+Added Net: Name=Extra_6
+Added Pin To Net: NetName=LED_Work Pin=VD1-2
+Added Pin To Net: NetName=LED_Work Pin=X11-8
+Added Net: Name=LED_Work
+Added Pin To Net: NetName=NetBut1_1 Pin=But1-1
+Added Pin To Net: NetName=NetBut1_1 Pin=R5-2
+Added Pin To Net: NetName=NetBut1_1 Pin=R6-1
+Added Pin To Net: NetName=NetBut1_1 Pin=X19-1
+Added Net: Name=NetBut1_1
+Added Pin To Net: NetName=NetBut1_3 Pin=But1-3
+Added Pin To Net: NetName=NetBut1_3 Pin=R5-1
+Added Net: Name=NetBut1_3
+Added Pin To Net: NetName=NetR3_1 Pin=R3-1
+Added Pin To Net: NetName=NetR3_1 Pin=VD1-1
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetR4_1 Pin=R4-1
+Added Pin To Net: NetName=NetR4_1 Pin=VD2-1
+Added Net: Name=NetR4_1
+Added Pin To Net: NetName=NetSW1_2 Pin=SW1-2
+Added Pin To Net: NetName=NetSW1_2 Pin=X17-2
+Added Net: Name=NetSW1_2
+Added Pin To Net: NetName=NetSW2_2 Pin=SW2-2
+Added Pin To Net: NetName=NetSW2_2 Pin=X18-2
+Added Net: Name=NetSW2_2
+Added Pin To Net: NetName=NetSW3_2 Pin=SW3-2
+Added Pin To Net: NetName=NetSW3_2 Pin=X19-3
+Added Net: Name=NetSW3_2
+Added Pin To Net: NetName=NetX8_3 Pin=X8-3
+Added Pin To Net: NetName=NetX8_3 Pin=X8-4
+Added Net: Name=NetX8_3
+Added Pin To Net: NetName=NetX9_3 Pin=X9-3
+Added Pin To Net: NetName=NetX9_3 Pin=X9-4
+Added Net: Name=NetX9_3
+Added Pin To Net: NetName=NetX10_3 Pin=X10-3
+Added Pin To Net: NetName=NetX10_3 Pin=X10-4
+Added Net: Name=NetX10_3
+Added Pin To Net: NetName=RX_1 Pin=X11-20
+Added Pin To Net: NetName=RX_1 Pin=X19-2
+Added Net: Name=RX_1
+Added Pin To Net: NetName=S1 Pin=X11-13
+Added Pin To Net: NetName=S1 Pin=X16-4
+Added Net: Name=S1
+Added Pin To Net: NetName=S2 Pin=X11-12
+Added Pin To Net: NetName=S2 Pin=X16-3
+Added Net: Name=S2
+Added Pin To Net: NetName=SCL Pin=X11-22
+Added Pin To Net: NetName=SCL Pin=X13-2
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=X11-21
+Added Pin To Net: NetName=SDA Pin=X13-1
+Added Net: Name=SDA
+Added Pin To Net: NetName=Servo Pin=X11-10
+Added Pin To Net: NetName=Servo Pin=X15-1
+Added Net: Name=Servo
+Added Pin To Net: NetName=Step1 Pin=X8-2
+Added Pin To Net: NetName=Step1 Pin=X11-5
+Added Net: Name=Step1
+Added Pin To Net: NetName=Step2 Pin=X9-2
+Added Pin To Net: NetName=Step2 Pin=X11-6
+Added Net: Name=Step2
+Added Pin To Net: NetName=Step3 Pin=X10-2
+Added Pin To Net: NetName=Step3 Pin=X11-24
+Added Net: Name=Step3
+Added Pin To Net: NetName=SW Pin=X11-11
+Added Pin To Net: NetName=SW Pin=X16-2
+Added Net: Name=SW
+Added Pin To Net: NetName=TCRT Pin=X11-56
+Added Pin To Net: NetName=TCRT Pin=X14-1
+Added Net: Name=TCRT
+Added Pin To Net: NetName=TX_1 Pin=But1-2
+Added Pin To Net: NetName=TX_1 Pin=X11-19
+Added Net: Name=TX_1
+Added Pin To Net: NetName=VCC Pin=C1-2
+Added Pin To Net: NetName=VCC Pin=C2-2
+Added Pin To Net: NetName=VCC Pin=C3-2
+Added Pin To Net: NetName=VCC Pin=R1-1
+Added Pin To Net: NetName=VCC Pin=X4-1
+Added Pin To Net: NetName=VCC Pin=X5-3
+Added Pin To Net: NetName=VCC Pin=X6-3
+Added Pin To Net: NetName=VCC Pin=X7-3
+Added Pin To Net: NetName=VCC Pin=X8-16
+Added Pin To Net: NetName=VCC Pin=X9-16
+Added Pin To Net: NetName=VCC Pin=X10-16
+Added Net: Name=VCC
+Change Class Name : Old Net Name=рандом_sheet New Net Name=Проект_ЕТЗ
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component But1 кнопка_S
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component C1 am
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component C2 am
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component C3 am
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component R1 резистор
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component R2 резистор
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component R3 резистор
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component R4 резистор
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component R5 резистор
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component R6 резистор
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component SW1 кнопка_S
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component SW2 кнопка_S
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component SW3 кнопка_S
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component VD1 LED0805
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component VD2 LED0805
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X6 стаб меги
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X7 стаб 3.3
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X8 A4988
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X9 A4988
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X10 A4988
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X11 Arduino Mega 2560 Pro
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X12 PLS-2.54-3*6
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X13
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X14 TCRT
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X15 2006mg
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X16 Ky-040
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X17 для датчиков
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X18 для датчиков
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X19 UART
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3
+Added Rule: Name=Schematic Supply Nets_4
+Added Rule: Name=Schematic Supply Nets_5
+Added Rule: Name=Schematic Supply Nets_6

@@ -1,0 +1,9 @@
+DRC Rules Export File for PCB: C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=27.56
+RuleKind=MinimumAnnularRing|RuleName=min_pad_ar_std|Scope=Board|Minimum=7.87
+RuleKind=MinimumAnnularRing|RuleName=min_via_ar_std|Scope=Board|Minimum=5.91
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=solder_mask_expansion_std|Scope=Board|Minimum=1.97
+RuleKind=Width|RuleName=width_18um_std|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=clearance_inner_18um_std|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=clearance_outer_18um_std|Scope=Board|Minimum=4.92

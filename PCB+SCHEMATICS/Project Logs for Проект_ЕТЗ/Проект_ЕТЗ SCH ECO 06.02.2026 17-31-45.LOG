@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=SW1 NewDesignator=But1
+Change Component Designator: OldDesignator=SW2 NewDesignator=SW1
+Change Component Designator: OldDesignator=SW3 NewDesignator=SW2
+Change Component Designator: OldDesignator=SW4 NewDesignator=SW3

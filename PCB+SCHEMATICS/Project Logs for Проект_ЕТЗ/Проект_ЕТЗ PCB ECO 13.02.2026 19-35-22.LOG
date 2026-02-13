@@ -1,0 +1,18 @@
+Added Component: Designator=X21(CWF-2)
+Add component (AddParameter): Name = "Contact_1"; Value = "Contact_1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "Contact_2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "DS1069-2M (CWF-2)"; VariantName = "[No Variations]"
+Added Component: Designator=X22(CWF-2)
+Add component (AddParameter): Name = "Contact_1"; Value = "Contact_1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_2"; Value = "Contact_2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "DS1069-2M (CWF-2)"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=X21-2
+Added Pin To Net: NetName=GND Pin=X22-2
+Added Pin To Net: NetName=But1 Pin=X11-17
+Added Pin To Net: NetName=But1 Pin=X21-1
+Added Net: Name=But1
+Added Pin To Net: NetName=But2 Pin=X11-18
+Added Pin To Net: NetName=But2 Pin=X22-1
+Added Net: Name=But2
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X21 DS1069-2M (CWF-2)
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X22 DS1069-2M (CWF-2)

@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=TX_1 Pin=X19-1
+Removed Pin From Net: NetName=RX_1 Pin=X19-2
+Added Component: Designator=X?(LOGIC CONVENTOR)
+Added Component: Designator=X?(LOGIC CONVENTOR)
+Added Pin To Net: NetName=+5В Pin=X?-3
+Added Pin To Net: NetName=GND Pin=X?-4
+Added Pin To Net: NetName=TX_1 Pin=X?-5
+Added Pin To Net: NetName=RX_1 Pin=X?-6
+Added Pin To Net: NetName=+3.3В Pin=X?-9
+Added Pin To Net: NetName=GND Pin=X?-10
+Added Pin To Net: NetName=RX_1L Pin=X19-2
+Added Pin To Net: NetName=RX_1L Pin=X?-12
+Added Net: Name=RX_1L
+Added Pin To Net: NetName=TX_1L Pin=X19-1
+Added Pin To Net: NetName=TX_1L Pin=X?-11
+Added Net: Name=TX_1L
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X? LOGIC CONVENTTOR
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X? LOGIC CONVENTTOR

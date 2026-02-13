@@ -1,0 +1,526 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\ADAgile\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">09.02.2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16:29:58</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc" class="file"><acronym title="C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc">C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">54</td></tr>
+</table>
+</td>
+</table><a name="IDIWOJEKG20DG0CYFPH2SLGSE4CEOO3XSMJXSGZOWDHHGU3NXM1C"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJMN0CHKQALL1MGCVFPE2VOTRRIQG2OIDIEXJLGHC0AUW3QJIFUGN">Clearance Constraint (Gap=0.125mm) (NOT (OnTopLayer Or OnBottomLayer)),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLCQE3HM1NXOOBN54JYBBGS4AQDCVPD2SZF32P10JTV0HCXABZZH">Clearance Constraint (Gap=0.125mm) (OnTopLayer OR OnBottomLayer),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQMDN03NF3TZGOQ4EP5NJKGQYAB4X1YOVNX32LIMV1E3J05RUAMKL">Clearance Constraint (Gap=0.7mm) (InPolygonClass('TOP_GND')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQX5GCVZ2GUEPIA1SKA1DCRFIPRKGRX12E1YZ2DJPOT4J1NPPZP">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIXXFA2MFL0MDD4FHX1EIN4WJELFUGDFACVV1RECARMZN4Q0TGPDH">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">50</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXN0UET42VQN2FCLAX34OVYKGBMQ3051UQVVL1UODSCN2AJXCMENE">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5MO3D4E40NLHPWHDKLKSHR5MUEXKX4OICEWV1NB45CNOYPEKT2QC">Width Constraint (Min=0.125mm) (Max=10mm) (Preferred=0.15mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDI03LRW2JNH50IKDPQPPBN05WRLEHQNOPZNA2IGNBVBHLOBXKDFLP">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXSCNCEOLFXSIB00Z1Q2UG3LAJETUXJYEGOS5M0HQ1XWNOORIII5M">Power Plane Connect Rule(Relief Connect )(Expansion=0.5mm) (Conductor Width=0.2mm) (Air Gap=0.2mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDINHRGLSXEZO2GGYUB2EBI5AZ5DJCHXZRIICOY1NGH2ITE43VX3MO">Minimum Annular Ring (Minimum=0.2mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2UJZULM2Y2VSGZFERSZSTRWSEIQSX2SNNL5YXINLA4MDLXVIQUGK">Minimum Annular Ring (Minimum=0.15mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ5MHGWFIYWCJEW1FG1UZ1LRQZLWGI5HI411MNGCZVQKRSTM02CSH">Acute Angle Constraint (Minimum=35.000) (OnCopper)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDELVAPVGWCQBTIAZAQ0L5WT040LEOPEH1101MXGHGNM44GMLLOVQH">Hole Size Constraint (Min=0.3mm) (Max=5.9mm) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRCOQF0ILF4NPPNXTLUFT41Y5VD3FIVUBGWALBCVB35FDI5VIUAO">Hole Size Constraint (Min=0.6mm) (Max=5.9mm) (IsPad)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYOBPFUZXKKVXJTPZDXD1AHFEVGQLUYBN5ATGO5POHBDG43Q4ZR1N">Hole To Hole Clearance (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYZPXBDFK25PLDWD0LFML4ZGHCLBQIYRJDB1UXEKKLJFH1FFJOB5P">Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT0XEM0ZG0FOILA1I31DFN550AI2YSMMWAJSE5IJB4SHUYPRONKVB">Silk To Solder Mask (Clearance=0.15mm) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4WJH5GEH00PLLY4QIHTO5DJVYKNFYINHR2MSOLOHXDB3Z3ZHSZ2N">Silk to Silk (Clearance=0.15mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVHBEUHRLFAUPCL3T31GUICBA2BHTRXCRXII0J5KMXILDVSPP0TRF">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCVZXFMCKZCOTM3LQQQUFOFBE3E5R3DFDJGZMSCO1GPHFNZZUIOBK">Board Clearance Constraint (Gap=0mm) (NOT (OnLayer('Bottom Overlay') OR OnLayer('Top Overlay')))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0V2MBINFFQ5WJSP50RFLJPD1MFN4M1NSO0MEJPD4OMAKH3R3M3M">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">54</td>
+</tr>
+</table><br><a name="IDIXXFA2MFL0MDD4FHX1EIN4WJELFUGDFACVV1RECARMZN4Q0TGPDH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2171.535mil|Location2.X=2943.465mil|Location1.Y=538.74mil|Location2.Y=619.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2171.535mil|Location2.X=2943.465mil|Location1.Y=538.74mil|Location2.Y=619.567mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C1-1(56.007mm,14.887mm) on Multi-Layer And Pad C2-1(73.914mm,14.534mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.63mil|Location2.X=2238.465mil|Location1.Y=403.19mil|Location2.Y=619.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.63mil|Location2.X=2238.465mil|Location1.Y=403.19mil|Location2.Y=619.567mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X10-15(46.101mm,11.241mm) on Multi-Layer And Pad C1-1(56.007mm,14.887mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2171.535mil|Location2.X=2511.614mil|Location1.Y=104.921mil|Location2.Y=619.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2171.535mil|Location2.X=2511.614mil|Location1.Y=104.921mil|Location2.Y=619.567mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C1-1(56.007mm,14.887mm) on Multi-Layer And Pad X4-2(60.745mm,5.715mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2171.535mil|Location2.X=2286.89mil|Location1.Y=552.638mil|Location2.Y=1319.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2171.535mil|Location2.X=2286.89mil|Location1.Y=552.638mil|Location2.Y=1319.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C1-1(56.007mm,14.887mm) on Multi-Layer And Pad X7-4(57.037mm,31.86mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2876.535mil|Location2.X=3209.37mil|Location1.Y=413.19mil|Location2.Y=605.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2876.535mil|Location2.X=3209.37mil|Location1.Y=413.19mil|Location2.Y=605.669mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C2-1(73.914mm,14.534mm) on Multi-Layer And Pad X9-9(80.518mm,11.495mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=195.132mil|Location2.X=493.464mil|Location1.Y=2225.433mil|Location2.Y=2797.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=195.132mil|Location2.X=493.464mil|Location1.Y=2225.433mil|Location2.Y=2797.494mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad Free-2(8.006mm,68.006mm) on Multi-Layer And Pad C3-1(11.684mm,57.376mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=426.536mil|Location2.X=876.732mil|Location1.Y=2175.828mil|Location2.Y=2292.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=426.536mil|Location2.X=876.732mil|Location1.Y=2175.828mil|Location2.Y=2292.362mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C3-1(11.684mm,57.376mm) on Multi-Layer And Pad X8-15(21.269mm,56.266mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5621.42mil|Location2.X=5969.37mil|Location1.Y=2005.63mil|Location2.Y=2797.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5621.42mil|Location2.X=5969.37mil|Location1.Y=2005.63mil|Location2.Y=2797.494mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad Free-2(145.834mm,68.006mm) on Multi-Layer And Pad X12-6(150.622mm,51.943mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5473.599mil|Location2.X=5861.578mil|Location1.Y=2557.337mil|Location2.Y=2821.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5473.599mil|Location2.X=5861.578mil|Location1.Y=2557.337mil|Location2.Y=2821.401mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X16-5(140.081mm,70.612mm) on Multi-Layer And Pad Free-2(145.834mm,68.006mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5510.434mil|Location2.X=5861.578mil|Location1.Y=140.63mil|Location2.Y=435.289mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5510.434mil|Location2.X=5861.578mil|Location1.Y=140.63mil|Location2.Y=435.289mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X11-73(140.965mm,4.572mm) on Multi-Layer And Pad Free-2(145.834mm,8.006mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=195.132mil|Location2.X=888.976mil|Location1.Y=195.132mil|Location2.Y=534.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=195.132mil|Location2.X=888.976mil|Location1.Y=195.132mil|Location2.Y=534.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad Free-2(8.006mm,8.006mm) on Multi-Layer And Pad R6-2(21.955mm,12.827mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=110.828mil|Location2.X=435.289mil|Location1.Y=195.132mil|Location2.Y=834.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=110.828mil|Location2.X=435.289mil|Location1.Y=195.132mil|Location2.Y=834.172mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X19-4(3.815mm,20.188mm) on Multi-Layer And Pad Free-2(8.006mm,8.006mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3620.039mil|Location2.X=3769.528mil|Location1.Y=1835.158mil|Location2.Y=2831.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3620.039mil|Location2.X=3769.528mil|Location1.Y=1835.158mil|Location2.Y=2831.22mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad Free-2(93.599mm,70.263mm) on Multi-Layer And Pad Free-2(94.096mm,48.263mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3639.606mil|Location2.X=3814.528mil|Location1.Y=1194.764mil|Location2.Y=1965.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3639.606mil|Location2.X=3814.528mil|Location1.Y=1194.764mil|Location2.Y=1965.079mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad Free-2(94.096mm,48.263mm) on Multi-Layer And Pad R2-2(96.139mm,30.972mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3755.472mil|Location2.X=5049.606mil|Location1.Y=1100.473mil|Location2.Y=1243.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3755.472mil|Location2.X=5049.606mil|Location1.Y=1100.473mil|Location2.Y=1243.976mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R2-2(96.139mm,30.972mm) on Top Layer And Pad R4-2(127.635mm,28.702mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3730.63mil|Location2.X=3814.528mil|Location1.Y=413.19mil|Location2.Y=1243.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3730.63mil|Location2.X=3814.528mil|Location1.Y=413.19mil|Location2.Y=1243.976mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X9-15(95.758mm,11.495mm) on Multi-Layer And Pad R2-2(96.139mm,30.972mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5074.764mil|Location2.X=5890.748mil|Location1.Y=705.472mil|Location2.Y=764.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5074.764mil|Location2.X=5890.748mil|Location1.Y=705.472mil|Location2.Y=764.528mil|Absolute=True">Un-Routed Net Constraint: Net NetR3_1 Between Pad R3-1(129.524mm,18.669mm) on Top Layer And Pad VD1-1(149mm,18.669mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4996.024mil|Location2.X=5049.606mil|Location1.Y=705.472mil|Location2.Y=1159.527mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4996.024mil|Location2.X=5049.606mil|Location1.Y=705.472mil|Location2.Y=1159.527mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R3-2(127.524mm,18.669mm) on Top Layer And Pad R4-2(127.635mm,28.702mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4996.024mil|Location2.X=5491.206mil|Location1.Y=138.599mil|Location2.Y=764.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4996.024mil|Location2.X=5491.206mil|Location1.Y=138.599mil|Location2.Y=764.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R3-2(127.524mm,18.669mm) on Top Layer And Pad X11-74(138.425mm,4.572mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5079.134mil|Location2.X=5890.748mil|Location1.Y=1100.473mil|Location2.Y=1159.527mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5079.134mil|Location2.X=5890.748mil|Location1.Y=1100.473mil|Location2.Y=1159.527mil|Absolute=True">Un-Routed Net Constraint: Net NetR4_1 Between Pad R4-1(129.635mm,28.702mm) on Top Layer And Pad VD2-1(149mm,28.702mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5000.394mil|Location2.X=5969.37mil|Location1.Y=1100.473mil|Location2.Y=1584.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5000.394mil|Location2.X=5969.37mil|Location1.Y=1100.473mil|Location2.Y=1584.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R4-2(127.635mm,28.702mm) on Top Layer And Pad X12-1(150.622mm,39.243mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=839.764mil|Location2.X=1254.37mil|Location1.Y=403.19mil|Location2.Y=534.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=839.764mil|Location2.X=1254.37mil|Location1.Y=403.19mil|Location2.Y=534.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R6-2(21.955mm,12.827mm) on Top Layer And Pad X10-9(30.861mm,11.241mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1175.63mil|Location2.X=5491.401mil|Location1.Y=875.63mil|Location2.Y=1721.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1175.63mil|Location2.X=5491.401mil|Location1.Y=875.63mil|Location2.Y=1721.401mil|Absolute=True">Un-Routed Net Constraint: Net Dir3 Between Pad X10-1(30.861mm,23.241mm) on Multi-Layer And Pad X11-23(138.43mm,42.672mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1175.63mil|Location2.X=1854.37mil|Location1.Y=403.19mil|Location2.Y=481.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1175.63mil|Location2.X=1854.37mil|Location1.Y=403.19mil|Location2.Y=481.93mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X10-9(30.861mm,11.241mm) on Multi-Layer And Pad X10-15(46.101mm,11.241mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1275.63mil|Location2.X=5591.401mil|Location1.Y=875.63mil|Location2.Y=1721.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1275.63mil|Location2.X=5591.401mil|Location1.Y=875.63mil|Location2.Y=1721.401mil|Absolute=True">Un-Routed Net Constraint: Net Step3 Between Pad X10-2(33.401mm,23.241mm) on Multi-Layer And Pad X11-24(140.97mm,42.672mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4656.221mil|Location2.X=5489.37mil|Location1.Y=640.63mil|Location2.Y=2343.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4656.221mil|Location2.X=5489.37mil|Location1.Y=640.63mil|Location2.Y=2343.78mil|Absolute=True">Un-Routed Net Constraint: Net Dir1 Between Via (118.618mm,59.182mm) from Top Layer to Bottom Layer And Pad X11-3(138.43mm,17.272mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3130.63mil|Location2.X=5591.401mil|Location1.Y=638.598mil|Location2.Y=964.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3130.63mil|Location2.X=5591.401mil|Location1.Y=638.598mil|Location2.Y=964.37mil|Absolute=True">Un-Routed Net Constraint: Net Dir2 Between Pad X9-1(80.518mm,23.495mm) on Multi-Layer And Pad X11-4(140.97mm,17.272mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4210.63mil|Location2.X=5769.37mil|Location1.Y=640.63mil|Location2.Y=1984.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4210.63mil|Location2.X=5769.37mil|Location1.Y=640.63mil|Location2.Y=1984.37mil|Absolute=True">Un-Routed Net Constraint: Net Extra_4 Between Pad X11-58(107.95mm,17.272mm) on Multi-Layer And Pad X12-16(145.542mm,49.403mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4108.599mil|Location2.X=5769.37mil|Location1.Y=738.598mil|Location2.Y=1884.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4108.599mil|Location2.X=5769.37mil|Location1.Y=738.598mil|Location2.Y=1884.37mil|Absolute=True">Un-Routed Net Constraint: Net Extra_5 Between Pad X11-59(105.41mm,19.812mm) on Multi-Layer And Pad X12-17(145.542mm,46.863mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.63mil|Location2.X=5591.401mil|Location1.Y=738.598mil|Location2.Y=964.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.63mil|Location2.X=5591.401mil|Location1.Y=738.598mil|Location2.Y=964.37mil|Absolute=True">Un-Routed Net Constraint: Net Step2 Between Pad X9-2(83.058mm,23.495mm) on Multi-Layer And Pad X11-6(140.97mm,19.812mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4208.599mil|Location2.X=5769.37mil|Location1.Y=738.598mil|Location2.Y=2084.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4208.599mil|Location2.X=5769.37mil|Location1.Y=738.598mil|Location2.Y=2084.37mil|Absolute=True">Un-Routed Net Constraint: Net Extra_6 Between Pad X11-60(107.95mm,19.812mm) on Multi-Layer And Pad X12-18(145.542mm,51.943mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5408.403mil|Location2.X=5589.174mil|Location1.Y=138.599mil|Location2.Y=221.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5408.403mil|Location2.X=5589.174mil|Location1.Y=138.599mil|Location2.Y=221.401mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X11-74(138.425mm,4.572mm) on Multi-Layer And Pad X11-73(140.965mm,4.572mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1505.63mil|Location2.Y=1684.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1505.63mil|Location2.Y=1684.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X12-1(150.622mm,39.243mm) on Multi-Layer And Pad X12-2(150.622mm,41.783mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1605.63mil|Location2.Y=1784.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1605.63mil|Location2.Y=1784.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X12-2(150.622mm,41.783mm) on Multi-Layer And Pad X12-3(150.622mm,44.323mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1705.63mil|Location2.Y=1884.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1705.63mil|Location2.Y=1884.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X12-3(150.622mm,44.323mm) on Multi-Layer And Pad X12-4(150.622mm,46.863mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1805.63mil|Location2.Y=1984.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1805.63mil|Location2.Y=1984.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X12-4(150.622mm,46.863mm) on Multi-Layer And Pad X12-5(150.622mm,49.403mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1905.63mil|Location2.Y=2084.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5890.63mil|Location2.X=5969.37mil|Location1.Y=1905.63mil|Location2.Y=2084.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X12-5(150.622mm,49.403mm) on Multi-Layer And Pad X12-6(150.622mm,51.943mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2204.213mil|Location2.X=2906.653mil|Location1.Y=1835.039mil|Location2.Y=2216.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2204.213mil|Location2.X=2906.653mil|Location1.Y=1835.039mil|Location2.Y=2216.653mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X7-2(57.037mm,48.26mm) on Multi-Layer And Pad X13-4(73.025mm,55.499mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1645.432mil|Location2.X=2579.568mil|Location1.Y=2815.828mil|Location2.Y=2899.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1645.432mil|Location2.X=2579.568mil|Location1.Y=2815.828mil|Location2.Y=2899.172mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X15-3(42.794mm,72.639mm) on Multi-Layer And Pad X14-3(64.521mm,72.522mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=797.992mil|Location2.X=1724.172mil|Location1.Y=2775.828mil|Location2.Y=2899.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=797.992mil|Location2.X=1724.172mil|Location1.Y=2775.828mil|Location2.Y=2899.172mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X8-9(21.269mm,71.506mm) on Multi-Layer And Pad X15-3(42.794mm,72.639mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=110.432mil|Location2.X=189.37mil|Location1.Y=1260.828mil|Location2.Y=1864.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=110.432mil|Location2.X=189.37mil|Location1.Y=1260.828mil|Location2.Y=1864.37mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X17-3(3.805mm,33.025mm) on Multi-Layer And Pad X18-3(3.81mm,46.355mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=110.432mil|Location2.X=189.568mil|Location1.Y=755.432mil|Location2.Y=1339.568mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=110.432mil|Location2.X=189.568mil|Location1.Y=755.432mil|Location2.Y=1339.568mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X17-3(3.805mm,33.025mm) on Multi-Layer And Pad X19-4(3.815mm,20.188mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1126.339mil|Location1.Y=1189.37mil|Location2.Y=1964.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1126.339mil|Location1.Y=1189.37mil|Location2.Y=1964.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-4(27.559mm,31.86mm) on Multi-Layer And Pad X5-2(27.559mm,48.26mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1706.614mil|Location1.Y=1835.039mil|Location2.Y=1964.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1706.614mil|Location1.Y=1835.039mil|Location2.Y=1964.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-2(27.559mm,48.26mm) on Multi-Layer And Pad X6-2(42.298mm,48.26mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=797.992mil|Location2.X=1126.339mil|Location1.Y=1835.039mil|Location2.Y=2254.568mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=797.992mil|Location2.X=1126.339mil|Location1.Y=1835.039mil|Location2.Y=2254.568mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X8-15(21.269mm,56.266mm) on Multi-Layer And Pad X5-2(27.559mm,48.26mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1706.614mil|Location1.Y=1189.37mil|Location2.Y=1319.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1043.661mil|Location2.X=1706.614mil|Location1.Y=1189.37mil|Location2.Y=1319.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-4(27.559mm,31.86mm) on Multi-Layer And Pad X6-4(42.298mm,31.86mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1623.937mil|Location2.X=2286.89mil|Location1.Y=1835.039mil|Location2.Y=1964.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1623.937mil|Location2.X=2286.89mil|Location1.Y=1835.039mil|Location2.Y=1964.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X6-2(42.298mm,48.26mm) on Multi-Layer And Pad X7-2(57.037mm,48.26mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1623.937mil|Location2.X=2286.89mil|Location1.Y=1189.37mil|Location2.Y=1319.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1623.937mil|Location2.X=2286.89mil|Location1.Y=1189.37mil|Location2.Y=1319.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X6-4(42.298mm,31.86mm) on Multi-Layer And Pad X7-4(57.037mm,31.86mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=797.992mil|Location2.X=876.732mil|Location1.Y=2175.828mil|Location2.Y=2854.568mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=797.992mil|Location2.X=876.732mil|Location1.Y=2175.828mil|Location2.Y=2854.568mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X8-15(21.269mm,56.266mm) on Multi-Layer And Pad X8-9(21.269mm,71.506mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3130.63mil|Location2.X=3809.37mil|Location1.Y=413.19mil|Location2.Y=491.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3130.63mil|Location2.X=3809.37mil|Location1.Y=413.19mil|Location2.Y=491.93mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X9-9(80.518mm,11.495mm) on Multi-Layer And Pad X9-15(95.758mm,11.495mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYZPXBDFK25PLDWD0LFML4ZGHCLBQIYRJDB1UXEKKLJFH1FFJOB5P"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=476.422mil|Location2.X=483.578mil|Location1.Y=688.516mil|Location2.Y=695.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=476.422mil|Location2.X=483.578mil|Location1.Y=688.516mil|Location2.Y=695.672mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.148mm &lt; 0.15mm) Between Pad SW1-2(12.192mm,16.605mm) on Multi-Layer And Pad SW1-3(12.192mm,18.605mm) on Multi-Layer [Top Solder] Mask Sliver [0.148mm] / [Bottom Solder] Mask Sliver [0.148mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=468.922mil|Location2.X=476.078mil|Location1.Y=1234.776mil|Location2.Y=1241.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=468.922mil|Location2.X=476.078mil|Location1.Y=1234.776mil|Location2.Y=1241.932mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.148mm &lt; 0.15mm) Between Pad SW2-2(12.002mm,30.48mm) on Multi-Layer And Pad SW2-3(12.002mm,32.48mm) on Multi-Layer [Top Solder] Mask Sliver [0.148mm] / [Bottom Solder] Mask Sliver [0.148mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=468.922mil|Location2.X=476.078mil|Location1.Y=1754.776mil|Location2.Y=1761.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=468.922mil|Location2.X=476.078mil|Location1.Y=1754.776mil|Location2.Y=1761.932mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.148mm &lt; 0.15mm) Between Pad SW3-2(12.002mm,43.688mm) on Multi-Layer And Pad SW3-3(12.002mm,45.688mm) on Multi-Layer [Top Solder] Mask Sliver [0.148mm] / [Bottom Solder] Mask Sliver [0.148mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D0%95%D0%A2%D0%97.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=888.068mil|Location2.X=895.223mil|Location1.Y=221.422mil|Location2.Y=228.578mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Service\Documents\Artist-v2\PCB+SCHEMATICS\Проект_ЕТЗ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=888.068mil|Location2.X=895.223mil|Location1.Y=221.422mil|Location2.Y=228.578mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.148mm &lt; 0.15mm) Between Pad SW4-2(23.622mm,5.715mm) on Multi-Layer And Pad SW4-3(21.622mm,5.715mm) on Multi-Layer [Top Solder] Mask Sliver [0.148mm] / [Bottom Solder] Mask Sliver [0.148mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

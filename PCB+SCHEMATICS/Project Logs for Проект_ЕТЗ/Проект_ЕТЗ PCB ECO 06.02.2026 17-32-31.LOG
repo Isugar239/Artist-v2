@@ -1,0 +1,19 @@
+Change Component Designator: OldDesignator=But1 NewDesignator=SW1
+Change Component Designator: OldDesignator=SW1 NewDesignator=SW2
+Change Component Designator: OldDesignator=SW2 NewDesignator=SW3
+Change Component Designator: OldDesignator=SW3 NewDesignator=SW4
+Change Net Name : Old Net Name=NetBut1_1 New Net Name=NetR5_2
+Change Net Name : Old Net Name=NetBut1_3 New Net Name=NetR5_1
+Change Net Name : Old Net Name=NetSW1_2 New Net Name=NetSW2_2
+Change Net Name : Old Net Name=NetSW2_2 New Net Name=NetSW3_2
+Change Net Name : Old Net Name=NetSW3_2 New Net Name=NetSW4_2
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component SW4 кнопка_S
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X1 DS1069-4M (CWF-4)
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X3 DS1069-4M (CWF-4)
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X4 XT60-M
+Added Member To Class: ClassName=Проект_ЕТЗ Member=Component X5 общий стаб
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3
+Added Rule: Name=Schematic Supply Nets_4
