@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=VCC Pin=C1-2
+Change Component Footprint: Designator=X16 Old Footprint=PLS-6 New Footprint=KY-040
+Change Component Comment : Designator=X13 Old Comment= New Comment=PLS-2.54-4
+Change Component Comment : Designator=X15 Old Comment=2006mg New Comment=PLS-2.54-3
+Change Component Comment : Designator=X16 Old Comment=Ky-040 New Comment=PLS-2.54-5
+Change Component Comment : Designator=X14 Old Comment=TCRT New Comment=PLS-2.54-3
+Change Component Comment : Designator=X19 Old Comment=UART New Comment=PLS-2.54-4
+Change Component Comment : Designator=X17 Old Comment=для датчиков New Comment=PLS-2.54-3
+Change Component Comment : Designator=X18 Old Comment=для датчиков New Comment=PLS-2.54-3
+Change Component Comment : Designator=X5 Old Comment=общий стаб New Comment=mini-360
+Change Component Comment : Designator=R1 Old Comment=резистор New Comment=1,2к
+Change Component Comment : Designator=R2 Old Comment=резистор New Comment=1,2к
+Change Component Comment : Designator=R3 Old Comment=резистор New Comment=220 
+Change Component Comment : Designator=R4 Old Comment=резистор New Comment=220
+Change Component Comment : Designator=X7 Old Comment=стаб 3.3 New Comment=mini-360
+Change Component Comment : Designator=X6 Old Comment=стаб меги New Comment=mini-360
