@@ -1,0 +1,4 @@
+Change Component Comment : Designator=R2 Old Comment=1,2ê New Comment=4,75ê
+Change Component Comment : Designator=R3 Old Comment=220  New Comment=220
+Change Net Name : Old Net Name=+3.3Â New Net Name=+3,3Â
+Added Rule: Name=Schematic Supply Nets_5
