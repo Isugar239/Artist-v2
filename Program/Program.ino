@@ -4,20 +4,19 @@
 
 #include "cart_xy.h"
 #include "encoder.h"
-#include "rgb.h"
-#include "sensor.h"
+
 #include "marker.h"
 
 GyverOLED<SSD1306_128x64> oled;
 OledMenu<10, GyverOLED<SSD1306_128x64>> menu(&oled);
 
-
+const int PIN_LED = 13;
 const int PIN_L_DIR = 2;
 const int PIN_L_STEP = 4;
-const int PIN_R_DIR = 16;
-const int PIN_R_STEP = 18;
-const int PIN_Y_DIR = 7;
-const int PIN_Y_STEP = 8;
+const int PIN_R_DIR = 3;
+const int PIN_R_STEP = 5;
+const int PIN_Y_DIR = 16;
+const int PIN_Y_STEP = 18;
 
 const int PIN_ENC_A = 10;
 const int PIN_ENC_B = 11;
@@ -32,9 +31,9 @@ const int MARKER_DOWN = 270;
 
 
 const float STEPS_X = 23.02;
-const float STEPS_Y = 23.02;
-const int MAX_SPEED = 40000;
-const int MAX_ACCEL = 10000;
+const float STEPS_Y = 400;
+const int MAX_SPEED = 9000;
+const int MAX_ACCEL = 2200;
 
 
 const float X_OFFSET = 38.0;
@@ -81,7 +80,7 @@ void calibrateGray() {
   float startX = IvanTM.getX();
   IvanTM.setPosX(startX + 150);
   while (IvanTM.tick()) {
-    int v = tcrt.readRaw();
+    int v = analogRead(A1);
     if (v < minV) minV = v;
     if (v > maxV) maxV = v;
   }
@@ -92,7 +91,7 @@ void blackline() {
   float startX = IvanTM.getX();
   IvanTM.setPosX(startX + 250);
   while (IvanTM.tick()) {
-    int v = tcrt.readRaw();
+    int v = analogRead(A1);
     if (v < gray) {
       IvanTM.setPosX(IvanTM.getX());
       break;
@@ -114,7 +113,7 @@ void func1() {
 void func2() { black.up(); }
 void func3() { black.down(); }
 void func4() { drawLine(0, 0, 200, 0); }
-void func5() { drawLine(0, 0, 0, 100); }
+void func5() { drawLine(0, 0, 0, -100); drawLine(0, 0, 0, 100); }
 void func6() { drawRect(10, 10, 120, 60); }
 void func7() { moveTo(0, 0); }
 void func8() {}
@@ -156,8 +155,7 @@ void setup() {
 
   Serial.begin(9600);
   black.begin();
-  fara.begin();
-
+  
   menu.onChange(onItemChange, false);
   menu.addItem(PSTR("Calibr"));
   menu.addItem(PSTR("Up"));
@@ -171,11 +169,12 @@ void setup() {
   menu.addItem(PSTR("10"));
 
   menu.showMenu(true);
+
+  func5();
 }
 
 void loop() {
   enc.tick();
   encoderCallback();
-  tcrt.tick();
   IvanTM.tick();
 }

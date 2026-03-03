@@ -18,10 +18,10 @@ public:
           int l_dir, int l_step,
           int r_dir, int r_step,
           int y_dir, int y_step,
-          int maxSpeed = 40000,
-          int maxAccel = 10000,
+          int maxSpeed = 32000,
+          int maxAccel = 3200,
           float stepsMmX = 23.02,
-          float stepsMmY = 23.02)
+          float stepsMmY = 3200)
     : left(res, l_step, l_dir),
       right(res, r_step, r_dir),
       y(res, y_step, y_dir),
@@ -85,23 +85,22 @@ public:
     setPos(x, y);
     unsigned long start = millis();
     while (tick() && (millis() - start < 30000)) {
-      delay(1);
     }
   }
 
   void gotoPosX(float Mm) {
     setPosX(Mm);
     unsigned long start = millis();
-    while (tick() && (millis() - start < 30000)) { // чтобы не завис
-      delay(1);
+    while (tick() && (millis() - start < 30000)) {
     }
   }
 
   void gotoPosY(float Mm) {
     setPosY(Mm);
     unsigned long start = millis();
-    while (tick() && (millis() - start < 30000)) { // чтобы не завис
-      delay(1);
+    while (tick() && (millis() - start < 30000)) {
+
     }
   }
 };
+
