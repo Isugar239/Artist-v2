@@ -23,8 +23,8 @@ const int PIN_ENC_B = 11;
 const int PIN_ENC_BTN = 12;
 
 const int PIN_MARKER = 9;
-const int MARKER_UP = 90;
-const int MARKER_DOWN = 270;
+const int MARKER_UP = 140;
+const int MARKER_DOWN = 110;
 
 
 
@@ -32,8 +32,8 @@ const int MARKER_DOWN = 270;
 
 const float STEPS_X = 23.02;
 const float STEPS_Y = 400;
-const int MAX_SPEED = 9000;
-const int MAX_ACCEL = 2200;
+const int MAX_SPEED = 4800;
+const int MAX_ACCEL = 1800;
 
 
 const float X_OFFSET = 38.0;
@@ -64,7 +64,7 @@ void drawLine(float x0, float y0, float x1, float y1) {
   black.up();
 }
 
-void drawRect(float x0, float y0, float w, float h) {
+void drawRect(float x0, float y0, float w, float h, float theta = 0) {
   moveTo(x0, y0);
   black.down();
   IvanTM.gotoPos(x0 + w, y0);
@@ -113,8 +113,8 @@ void func1() {
 void func2() { black.up(); }
 void func3() { black.down(); }
 void func4() { drawLine(0, 0, 200, 0); }
-void func5() { drawLine(0, 0, 0, -100); drawLine(0, 0, 0, 100); }
-void func6() { drawRect(10, 10, 120, 60); }
+void func5() {  drawLine(0, 0, 0, 100);drawLine(0, 0, 0, 100); }
+void func6() { drawLine(10, 10, 120, 60); drawLine(150, 100, 0, 60);}
 void func7() { moveTo(0, 0); }
 void func8() {}
 void func9() {}
@@ -147,7 +147,7 @@ void encoderCallback() {
 
 void setup() {
   pinMode(PIN_LED, OUTPUT);
-
+  pinMode(19, INPUT_PULLUP);
   oled.init();
   Wire.setClock(400000L);
   oled.clear();
@@ -169,8 +169,9 @@ void setup() {
   menu.addItem(PSTR("10"));
 
   menu.showMenu(true);
-
-  func5();
+  IvanTM.zeroY();
+// func4();
+func6();
 }
 
 void loop() {
