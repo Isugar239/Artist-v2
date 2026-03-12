@@ -22,16 +22,16 @@ private:
     int32_t dx = abs(xLeft - cur[0]) + abs(xRight - cur[1]);
     int32_t dy = abs(ySteps - cur[2]);
 
-    int speed = (dx > 0 && dy > 0) ? maxSpeedDiag : maxSpeed;
-    int accel = (dx > 0 && dy > 0) ? maxAccelDiag : maxAccel;
-    if (speed < 1) speed = 1;
-    if (accel < 1) accel = 1;
+    // int speed = (dx > 0 && dy > 0) ? maxSpeedDiag : maxSpeed;
+    // int accel = (dx > 0 && dy > 0) ? maxAccelDiag : maxAccel;
+    // if (speed < 1) speed = 1;
+    // if (accel < 1) accel = 1;
 
     int32_t tar[3] = { xLeft, xRight, ySteps };
     planner.brake();
     planner.clearBuffer();
-    planner.setMaxSpeed(speed);
-    planner.setAcceleration(accel);
+    // planner.setMaxSpeed(speed);
+    // planner.setAcceleration(accel);
     planner.addTarget(cur, 0);
     planner.addTarget(tar, 1);
     planner.start();
@@ -118,31 +118,48 @@ public:
   }
 
   void gotoPos(float x, float y) {
+    int32_t xSteps = x * stepsPerMmX;
+    int32_t ySteps = y * stepsPerMmY;
+
     setPos(x, y);
-    unsigned long start = millis();
-    while (tick() && (millis() - start < 30000)) {
+
+    while (tick()) {
     }
   }
 
   void gotoPosX(float Mm) {
+    int32_t xSteps = Mm * stepsPerMmX;
+    int32_t curX = planner.getCurrent(0);
+    int32_t dx = abs(xSteps - curX);
+    int speed = maxSpeed;
+    if (speed < 1) speed = 1;
+    unsigned long timeout = (unsigned long)((dx * 1000.0) / speed) + 5000;
+    if (timeout < 30000) timeout = 30000;
+
     setPosX(Mm);
     unsigned long start = millis();
-    while (tick() && (millis() - start < 30000)) {
+    while (tick() && (millis() - start < timeout)) {
     }
   }
 
   void gotoPosY(float Mm) {
+    int32_t ySteps = Mm * stepsPerMmY;
+    int32_t curY = planner.getCurrent(2);
+    int32_t dy = abs(ySteps - curY);
+    int speed = maxSpeed;
+    if (speed < 1) speed = 1;
+    unsigned long timeout = (unsigned long)((dy * 1000.0) / speed) + 5000;
+    if (timeout < 30000) timeout = 30000;
+
     setPosY(Mm);
     unsigned long start = millis();
-    while (tick() && (millis() - start < 30000)) {
-
+    while (tick() && (millis() - start < timeout)) {
     }
   }
   void zeroY(){
     planner.brake();
     planner.clearBuffer();
-
-    planner.setSpeed(2, -maxSpeed/2);
+    setPosY(-2000000);
     while (digitalRead(19)) {
       planner.tick();
     }

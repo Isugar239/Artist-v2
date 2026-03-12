@@ -32,8 +32,8 @@ const int MARKER_DOWN = 110;
 
 const float STEPS_X = 23.02;
 const float STEPS_Y = 400;
-const int MAX_SPEED = 4800;
-const int MAX_ACCEL = 1800;
+const int MAX_SPEED = 6000;
+const int MAX_ACCEL = 1200;
 
 
 const float X_OFFSET = 38.0;
@@ -119,7 +119,31 @@ void func7() { moveTo(0, 0); }
 void func8() {}
 void func9() {}
 void func10() {}
+void scanf() {
+  const float res = 3;
+  const float minX = 0;
+  const float minY = 0;
+  const float maxX = 270;
+  const float maxY = 170;
 
+  moveTo(minX, minY);
+
+  bool dirRight = true;
+  for (float y = minY; y <= maxY; y += res) {
+    IvanTM.setPosY(y);
+    while (IvanTM.tick()) {
+      // движение по медленной оси Y
+    }
+
+    float targetX = dirRight ? maxX : minX;
+    IvanTM.setPosX(targetX);
+    while (IvanTM.tick()) {
+      int v = analogRead(A1);
+      (void)v;
+    }
+    dirRight = !dirRight;
+  }
+}
 void (*menuFuncs[10])() = { func1, func2, func3, func4, func5, func6, func7, func8, func9, func10 };
 
 void onItemChange(const int index, const void* val, const byte valType) {
@@ -170,6 +194,9 @@ void setup() {
 
   menu.showMenu(true);
   IvanTM.zeroY();
+  IvanTM.setZero();
+  drawLine(0, 0, 0, 150);
+  drawLine(0, 150, 150, 150);
 // func4();
 func6();
 }
