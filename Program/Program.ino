@@ -132,7 +132,6 @@ void scanf() {
   for (float y = minY; y <= maxY; y += res) {
     IvanTM.setPosY(y);
     while (IvanTM.tick()) {
-      // движение по медленной оси Y
     }
 
     float targetX = dirRight ? maxX : minX;
@@ -195,10 +194,11 @@ void setup() {
   menu.showMenu(true);
   IvanTM.zeroY();
   IvanTM.setZero();
+  
+//Тестовое задание
   drawLine(0, 0, 0, 150);
   drawLine(0, 150, 150, 150);
-// func4();
-func6();
+
 }
 
 void loop() {
