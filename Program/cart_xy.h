@@ -58,7 +58,7 @@ public:
   {
     left.reverse(-1);
     right.reverse(-1);
-    y.reverse(-1);
+    // y.reverse(-1);
     left.setMaxSpeed(maxSpeed);
     right.setMaxSpeed(maxSpeed);
     y.setMaxSpeed(maxSpeed);
@@ -160,7 +160,7 @@ public:
     planner.brake();
     planner.clearBuffer();
     setPosY(-2000000);
-    while (digitalRead(19)) {
+    while (digitalRead(17)) {
       planner.tick();
     }
     planner.brake();

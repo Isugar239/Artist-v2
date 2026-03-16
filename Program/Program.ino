@@ -11,16 +11,16 @@ GyverOLED<SSD1306_128x64> oled;
 OledMenu<10, GyverOLED<SSD1306_128x64>> menu(&oled);
 
 const int PIN_LED = 13;
-const int PIN_L_DIR = 2;
-const int PIN_L_STEP = 4;
+const int PIN_L_DIR = 23;
+const int PIN_L_STEP = 24;
 const int PIN_R_DIR = 3;
 const int PIN_R_STEP = 5;
-const int PIN_Y_DIR = 16;
-const int PIN_Y_STEP = 18;
+const int PIN_Y_DIR = 2;
+const int PIN_Y_STEP = 4;
 
-const int PIN_ENC_A = 10;
+const int PIN_ENC_A = 12;
 const int PIN_ENC_B = 11;
-const int PIN_ENC_BTN = 12;
+const int PIN_ENC_BTN = 10;
 
 const int PIN_MARKER = 9;
 const int MARKER_UP = 140;
@@ -32,8 +32,8 @@ const int MARKER_DOWN = 110;
 
 const float STEPS_X = 23.02;
 const float STEPS_Y = 400;
-const int MAX_SPEED = 6000;
-const int MAX_ACCEL = 1200;
+const int MAX_SPEED = 1200;
+const int MAX_ACCEL = 600;
 
 
 const float X_OFFSET = 38.0;
